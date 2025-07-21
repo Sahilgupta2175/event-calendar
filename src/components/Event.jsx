@@ -73,3 +73,4 @@ const Event = ({ event, onEdit, onDelete }) => {
 };
 
 export default Event;
+

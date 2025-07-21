@@ -33,7 +33,7 @@ const SearchAndFilter = () => {
     
     if (confirmed) {
       deleteAllEvents();
-      clearAllFilters(); // Also clear any active filters
+      clearAllFilters(); 
     }
   };
 
@@ -43,16 +43,15 @@ const SearchAndFilter = () => {
     );
     
     if (confirmed) {
-      deleteAllEvents(); // Clear existing events first
-      
-      // Add sample events
+      deleteAllEvents(); 
+
       const sampleEvents = generateSampleData();
       sampleEvents.forEach(event => {
-        // Remove the id and createdAt to let the context generate them
+        
         const { id: _id, createdAt: _createdAt, ...eventData } = event;
         setTimeout(() => {
           addEvent(eventData);
-        }, 100); // Small delay to ensure delete completes first
+        }, 100); 
       });
       
       clearAllFilters();
@@ -97,7 +96,7 @@ const SearchAndFilter = () => {
       </div>
 
       <div className="search-filter-content">
-        {/* Search Input */}
+        {}
         <div className="search-input-container">
           <div className="search-input">
             <Search className="search-icon" size={20} />
@@ -116,7 +115,7 @@ const SearchAndFilter = () => {
           </div>
         </div>
 
-        {/* Filter Categories */}
+        {}
         {showFilters && (
           <div className="filter-section">
             <h4 className="filter-section-title">
@@ -143,7 +142,7 @@ const SearchAndFilter = () => {
           </div>
         )}
 
-        {/* Active Filters Summary */}
+        {}
         {hasActiveFilters && (
           <div className="active-filters">
             <div className="active-filters-header">
@@ -181,3 +180,4 @@ const SearchAndFilter = () => {
 };
 
 export default SearchAndFilter;
+

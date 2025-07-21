@@ -89,7 +89,7 @@ const EventForm = ({ event, onSave, onCancel, initialDate }) => {
         </div>
 
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          {/* Title */}
+          {}
           <div className="form-group">
             <label className="form-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Type size={16} />
@@ -108,7 +108,7 @@ const EventForm = ({ event, onSave, onCancel, initialDate }) => {
             )}
           </div>
 
-          {/* Date and Time */}
+          {}
           <div className="form-grid">
             <div className="form-group">
               <label className="form-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -145,7 +145,7 @@ const EventForm = ({ event, onSave, onCancel, initialDate }) => {
             </div>
           </div>
 
-          {/* Duration */}
+          {}
           <div className="form-group">
             <label className="form-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Clock size={16} />
@@ -161,7 +161,7 @@ const EventForm = ({ event, onSave, onCancel, initialDate }) => {
             />
           </div>
 
-          {/* Category */}
+          {}
           <div className="form-group">
             <label className="form-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Palette size={16} />
@@ -180,7 +180,7 @@ const EventForm = ({ event, onSave, onCancel, initialDate }) => {
             </select>
           </div>
 
-          {/* Recurrence */}
+          {}
           <div className="form-group">
             <label className="form-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Repeat size={16} />
@@ -199,7 +199,7 @@ const EventForm = ({ event, onSave, onCancel, initialDate }) => {
             </select>
           </div>
 
-          {/* Custom Recurrence */}
+          {}
           {formData.recurrence === 'custom' && (
             <div className="form-grid">
               <div className="form-group">
@@ -235,7 +235,7 @@ const EventForm = ({ event, onSave, onCancel, initialDate }) => {
             </div>
           )}
 
-          {/* Description */}
+          {}
           <div className="form-group">
             <label className="form-label" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <FileText size={16} />
@@ -250,7 +250,7 @@ const EventForm = ({ event, onSave, onCancel, initialDate }) => {
             />
           </div>
 
-          {/* Submit Buttons */}
+          {}
           <div style={{ display: 'flex', gap: '0.75rem', paddingTop: '1rem' }}>
             <button
               type="submit"
@@ -275,3 +275,4 @@ const EventForm = ({ event, onSave, onCancel, initialDate }) => {
 };
 
 export default EventForm;
+

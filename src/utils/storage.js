@@ -25,3 +25,4 @@ export const clearEvents = () => {
     console.error('Error clearing events from localStorage:', error);
   }
 };
+

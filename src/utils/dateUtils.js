@@ -22,7 +22,7 @@ import {
 export const getCalendarDays = (date) => {
   const monthStart = startOfMonth(date);
   const monthEnd = endOfMonth(date);
-  const calendarStart = startOfWeek(monthStart, { weekStartsOn: 0 }); // Sunday
+  const calendarStart = startOfWeek(monthStart, { weekStartsOn: 0 });
   const calendarEnd = endOfWeek(monthEnd, { weekStartsOn: 0 });
 
   return eachDayOfInterval({ start: calendarStart, end: calendarEnd });
@@ -123,3 +123,4 @@ export {
   isToday,
   startOfMonth
 };
+

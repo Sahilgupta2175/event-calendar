@@ -22,7 +22,6 @@ const eventReducer = (state, action) => {
         createdAt: new Date().toISOString()
       };
       
-      // Check for conflicts
       const conflicts = checkEventConflict(newEvent, state.events);
       if (conflicts && !action.payload.ignoreConflicts) {
         return {
@@ -30,8 +29,7 @@ const eventReducer = (state, action) => {
           error: 'Event conflicts with existing event'
         };
       }
-      
-      // Generate recurring events if needed
+
       const eventsToAdd = generateRecurringEvents(newEvent);
       
       return {
@@ -45,8 +43,7 @@ const eventReducer = (state, action) => {
       const updatedEvents = state.events.filter(event => 
         event.originalId !== action.payload.id && event.id !== action.payload.id
       );
-      
-      // Check for conflicts with other events
+
       const conflicts = checkEventConflict(action.payload, updatedEvents);
       if (conflicts && !action.payload.ignoreConflicts) {
         return {
@@ -54,8 +51,7 @@ const eventReducer = (state, action) => {
           error: 'Event conflicts with existing event'
         };
       }
-      
-      // Generate new recurring events if needed
+
       const eventsToAdd = generateRecurringEvents(action.payload);
       
       return {
@@ -119,11 +115,9 @@ const initialState = {
 export const EventProvider = ({ children }) => {
   const [state, dispatch] = useReducer(eventReducer, initialState);
 
-  // Load events from localStorage on mount
   useEffect(() => {
     const savedEvents = loadEvents();
-    
-    // If no saved events exist, load sample data
+
     if (savedEvents.length === 0 || !hasSampleData(savedEvents)) {
       const sampleEvents = generateSampleData();
       dispatch({ type: 'LOAD_EVENTS', payload: sampleEvents });
@@ -132,7 +126,6 @@ export const EventProvider = ({ children }) => {
     }
   }, []);
 
-  // Save events to localStorage whenever events change
   useEffect(() => {
     if (!state.loading) {
       saveEvents(state.events);
@@ -203,3 +196,4 @@ export const EventProvider = ({ children }) => {
     </EventContext.Provider>
   );
 };
+

@@ -99,7 +99,7 @@ const Calendar = () => {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="calendar">
-        {/* Calendar Header */}
+        {}
         <div className="calendar-nav">
           <h2 style={{ fontSize: '1.25rem', fontWeight: '600', margin: 0 }}>
             {format(currentDate, 'MMMM yyyy')}
@@ -120,7 +120,7 @@ const Calendar = () => {
           </div>
         </div>
 
-        {/* Week Day Headers */}
+        {}
         <div className="weekday-headers">
           {weekDays.map(day => (
             <div
@@ -132,7 +132,7 @@ const Calendar = () => {
           ))}
         </div>
 
-        {/* Calendar Grid */}
+        {}
         <div className="calendar-grid">
           {calendarDays.map((date, index) => (
             <CalendarDay
@@ -148,7 +148,7 @@ const Calendar = () => {
           ))}
         </div>
 
-        {/* Event Form Modal */}
+        {}
         {showEventForm && (
           <EventForm
             event={editingEvent}
@@ -158,7 +158,7 @@ const Calendar = () => {
           />
         )}
 
-        {/* Error Display */}
+        {}
         {error && (
           <div className="error-message">
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -185,3 +185,4 @@ const Calendar = () => {
 };
 
 export default Calendar;
+

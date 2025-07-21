@@ -1,4 +1,3 @@
-// Sample data for the event calendar
 import { v4 as uuidv4 } from 'uuid';
 import { format, addDays, subDays, startOfWeek } from 'date-fns';
 
@@ -7,7 +6,6 @@ export const generateSampleData = () => {
   const startOfCurrentWeek = startOfWeek(today);
 
   return [
-    // Work Events
     {
       id: uuidv4(),
       title: "Team Standup Meeting",
@@ -42,7 +40,6 @@ export const generateSampleData = () => {
       createdAt: new Date().toISOString()
     },
 
-    // Personal Events
     {
       id: uuidv4(),
       title: "Morning Workout",
@@ -77,7 +74,6 @@ export const generateSampleData = () => {
       createdAt: new Date().toISOString()
     },
 
-    // Health Events
     {
       id: uuidv4(),
       title: "Doctor Appointment",
@@ -112,7 +108,6 @@ export const generateSampleData = () => {
       createdAt: new Date().toISOString()
     },
 
-    // Social Events
     {
       id: uuidv4(),
       title: "Book Club Meeting",
@@ -147,7 +142,6 @@ export const generateSampleData = () => {
       createdAt: new Date().toISOString()
     },
 
-    // Other Events
     {
       id: uuidv4(),
       title: "Car Service",
@@ -182,7 +176,6 @@ export const generateSampleData = () => {
       createdAt: new Date().toISOString()
     },
 
-    // Past Events (to show variety)
     {
       id: uuidv4(),
       title: "Dentist Appointment",
@@ -215,3 +208,4 @@ export const hasSampleData = (events) => {
     event.title === "Meditation Session"
   );
 };
+

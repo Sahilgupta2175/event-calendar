@@ -30,7 +30,7 @@ const CalendarDay = ({
 
   const isCurrentMonth = isSameMonth(date, currentMonth);
   const isCurrentDay = isToday(date);
-  const isWeekend = date.getDay() === 0 || date.getDay() === 6; // Sunday or Saturday
+  const isWeekend = date.getDay() === 0 || date.getDay() === 6; 
 
   return (
     <div
@@ -66,3 +66,4 @@ const CalendarDay = ({
 };
 
 export default CalendarDay;
+
